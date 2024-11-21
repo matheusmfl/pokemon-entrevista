@@ -73,10 +73,10 @@ export function PokemonExplorer() {
             errorMessage={errorMessage}
           />
           <div className="flex justify-between mt-4">
-            <Button onClick={handlePrevious} disabled={offset === 0}>
+            <Button onClick={handlePrevious} disabled={offset === 0 || !!searchResult?.id}>
               <ChevronLeft className="mr-2 h-4 w-4" /> Previous
             </Button>
-            <Button onClick={handleNext} disabled={!pokemonList?.next}>
+            <Button onClick={handleNext} disabled={!pokemonList?.next || !!searchResult?.id}>
               Next <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
